@@ -16,6 +16,7 @@ from account.serializers import FetchAccountUserSerializer
 class ShutongObtainJSONWebToken(ObtainJSONWebToken):
 
     def post(self, request, *args, **kwargs):
+        """创建token"""
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             userObj = serializer.object.get('user') or request.user
@@ -30,6 +31,7 @@ class AccountUserViewSet(ViewSet):
 
     @action(methods=['get'], detail=False, url_path='fetch-users')
     def fetch(self, request, format='json'):
+        """获取用户"""
         queryset = ShutongUser.objects.all()
         serializer = FetchAccountUserSerializer(queryset, many=True)
         return Response({'code': 0, 'data': serializer.data, 'msg': ''},

@@ -20,6 +20,7 @@ from apps.apirequest import WorkFlowAPiRequest
 
 
 class LoonFlowAPIView(APIView):
+    """Loonflow api index"""
     authentication_classes = [JSONWebTokenAuthentication, BasicAuthentication]
     permission_classes = [IsAuthenticated]
 
@@ -39,6 +40,7 @@ class LoonFlowAPIView(APIView):
 
 
 class LoonFlowInitStateViewSet(ViewSet):
+    """loonflow 状态初始化"""
     authentication_classes = [JSONWebTokenAuthentication, BasicAuthentication]
     permission_classes = [IsAuthenticated]
 
@@ -62,6 +64,7 @@ class LoonFlowCreateTicketViewSet(ViewSet):
     permission_classes = [IsAuthenticated]
 
     def create(self, request):
+        """loonflow 创建工单"""
         request.data['username'] = request.user.username
         #resp = requests.post('http://localhost:6060/api/v1.0/tickets', data=simplejson.dumps(request.data)).text
         #resp = simplejson.loads(resp)
@@ -81,6 +84,7 @@ class LoonFlowTicketViewSet(ViewSet):
     permission_classes = [IsAuthenticated]
 
     def list(self, request, format='json'):
+        """loonflow 工单列表"""
         username = request.user.username
         category = request.query_params.get('category', None)
 

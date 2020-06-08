@@ -90,8 +90,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': '127.0.0.1',
         'NAME': 'shutongflow',
-        'USER': 'shutongflow',
-        'PASSWORD': '123456',
+        'USER': 'root',
+        'PASSWORD': 'root',
         'PORT': 3306
     }
 }
@@ -221,6 +221,6 @@ UEDITER_SETTING = {
 
 
 # the follows should be modify:
-WORKFLOWBACKENDURL = "http://127.0.0.1:6060"
-WORKFLOWTOKEN = "8cd585da-3cc6-11e8-9946-784f437daad6"
-WORKFLOWAPP="ops"
+WORKFLOWBACKENDURL = "http://192.168.10.4:11000"
+WORKFLOWTOKEN = "6212c490-9c03-11ea-9048-000c2934ccfc"
+WORKFLOWAPP = "ops"

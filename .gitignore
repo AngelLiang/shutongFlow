@@ -13,3 +13,4 @@ celerybeat-schedule
 example/
 loonflow/
 .vscode/
+.venv/
